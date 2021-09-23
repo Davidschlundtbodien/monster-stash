@@ -12,6 +12,11 @@ const MonsterInfo = (props) => {
 
   return(
     <article>
+      {!monster && <p>Monster Loading</p>}
+      <p>{monster.name}</p>
+      <p>HP - {monster.hit_points}</p>
+      <p>Hit Dice - {monster.hit_dice}</p>
+      <p>AC - {monster.armor_class}</p>
     </article>
   )
 }
