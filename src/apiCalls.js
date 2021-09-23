@@ -5,7 +5,7 @@ export const fetchMonsters = (challengeRating) => {
 }
 
 export const fetchMonsterInfo = (monsterIndex) => {
-  return fetch(`https://www.dnd5eapi.co/monsters/${monsterIndex}`)
+  return fetch(`https://www.dnd5eapi.co/api/monsters/${monsterIndex}`)
   .then(response => response.json())
   .catch(error => console.log(error))
 }
