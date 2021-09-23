@@ -5,16 +5,14 @@ import {challengeRatings} from '../../data/challengeRatings'
 const ChallengeRatingList = () => {
   const crList = challengeRatings.map(rating => {
     return (
-      <div key={rating.title}>
-        <Link to={`/monsters/${rating.param}`}>
-          <p>Challenge Rating: {rating.title}</p>
-        </Link>
-      </div>
+      <Link to={`/monsters/${rating.param}`} key={rating.title} className="rating-list-item">
+        <p>Challenge Rating: {rating.title}</p>
+      </Link>
     )
   })
 
   return(
-    <article>
+    <article className="rating-list-container">
       {crList}
     </article>
   )
