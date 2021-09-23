@@ -13,10 +13,10 @@ const App = () => {
         <Route exact path="/">
           <ChallengeRatingList />
         </Route>
-        <Route exact path="/monsters">
+        <Route exact path="/monsters/:rating">
           <MonsterList />
         </Route>
-        <Route exact path="/monsters/:name">
+        <Route exact path="/monsters/:rating/:name">
           <MonsterInfo />
         </Route>
       </Switch>

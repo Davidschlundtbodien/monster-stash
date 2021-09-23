@@ -1,12 +1,19 @@
+import { Link } from 'react-router-dom';
 import './ChallengeRatingList.css'
+import {challengeRatings} from '../../data/challengeRatings'
 
 const ChallengeRatingList = () => {
+  const crList = challengeRatings.map(rating => {
+    return (
+      <Link to={`/monsters/${rating.param}`} key={rating.title} className="rating-list-item">
+        <p>Challenge Rating: {rating.title}</p>
+      </Link>
+    )
+  })
+
   return(
-    <article>
-      <p>CR 1</p>
-      <p>CR 2</p>
-      <p>CR 3</p>
-      <p>CR 4</p>
+    <article className="rating-list-container">
+      {crList}
     </article>
   )
 }
