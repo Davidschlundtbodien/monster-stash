@@ -6,7 +6,7 @@ const ChallengeRatingList = () => {
   const crList = challengeRatings.map(rating => {
     return (
       <div key={rating.title}>
-        <Link to='/monsters'>
+        <Link to={`/monsters/${rating.param}`}>
           <p>Challenge Rating: {rating.title}</p>
         </Link>
       </div>
