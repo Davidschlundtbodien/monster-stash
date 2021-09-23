@@ -1,20 +1,17 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { fetchMonsterInfo } from '../../apiCalls'
 import './MonsterInfo.css'
 
 const MonsterInfo = () => {
+  const [monster, setMonster] = useState(null)
 
   useEffect(() => {
     fetchMonsterInfo('/api/monsters/azer')
-    .then(data => console.log(data))
+    .then(data => setMonster(data))
   }, [])
 
   return(
     <article>
-      <p>Goblin</p>
-      <p>Hp</p>
-      <p>AC</p>
-      <p>STATS</p>
     </article>
   )
 }
