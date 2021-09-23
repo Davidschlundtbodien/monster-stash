@@ -13,14 +13,14 @@ const MonsterList = (props) => {
 
   const monsterList = monsters.map(monster => {
     return (
-      <Link to={`/monsters/${props.rating}/${monster.index}`} key={monster.index}>
+      <Link to={`/monsters/${props.rating}/${monster.index}`} key={monster.index} className="monster-list-item">
         <p>{monster.name}</p>
       </Link>
     )
   })
 
   return(
-    <article>
+    <article className="monster-list-container">
       {monsterList}
     </article>
   )
