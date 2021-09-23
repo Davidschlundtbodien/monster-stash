@@ -13,8 +13,12 @@ const App = () => {
         <Route exact path="/">
           <ChallengeRatingList />
         </Route>
-        <Route exact path="/monsters/:rating">
-          <MonsterList />
+        <Route
+          exact path="/monsters/:rating"
+          render={({match}) => {
+            return <MonsterList rating={match.params.rating}/>
+          }}
+        >
         </Route>
         <Route exact path="/monsters/:rating/:name">
           <MonsterInfo />
