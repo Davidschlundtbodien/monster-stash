@@ -1,20 +1,17 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { fetchMonsters } from '../../apiCalls'
 import './MonsterList.css'
 
-const MonsterList = () => {
+const MonsterList = (props) => {
+  const [monsters, setMonsters] = useState([])
 
   useEffect(() => {
     fetchMonsters('2')
-    .then(data => console.log(data.results))
+    .then(data => setMonsters(data.results))
   }, [])
 
   return(
     <article>
-      <p>Goblin</p>
-      <p>Hobgoblin</p>
-      <p>Bugbear</p>
-      <p>Ogre</p>
     </article>
   )
 }
