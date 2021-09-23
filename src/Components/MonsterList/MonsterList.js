@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react'
-import { fetchMonsters } from '../../apiCalls'
-import './MonsterList.css'
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { fetchMonsters } from '../../apiCalls';
+import './MonsterList.css';
 
 const MonsterList = (props) => {
   const [monsters, setMonsters] = useState([])
@@ -12,7 +13,9 @@ const MonsterList = (props) => {
 
   const monsterList = monsters.map(monster => {
     return (
-      <p key={monster.index}>{monster.name}</p>
+      <Link to={`/monsters/${props.rating}/${monster.index}`} key={monster.index}>
+        <p>{monster.name}</p>
+      </Link>
     )
   })
 
