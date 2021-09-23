@@ -1,4 +1,4 @@
-export challengeRatings = [
+export const challengeRatings = [
   {title: '0', param: '0'},
   {title: '1/8', param: '0.125'},
   {title: '1/4', param: '0.25'},
