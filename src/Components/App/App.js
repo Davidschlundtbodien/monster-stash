@@ -20,8 +20,12 @@ const App = () => {
           }}
         >
         </Route>
-        <Route exact path="/monsters/:rating/:name">
-          <MonsterInfo />
+        <Route
+          exact path="/monsters/:rating/:name"
+          render={({match}) => {
+            return <MonsterInfo monsterIndex={match.params.name}/>
+          }}
+        >  
         </Route>
       </Switch>
     </div>
