@@ -6,7 +6,7 @@ const MonsterList = (props) => {
   const [monsters, setMonsters] = useState([])
 
   useEffect(() => {
-    fetchMonsters('2')
+    fetchMonsters(props.rating)
     .then(data => setMonsters(data.results))
   }, [])
 
