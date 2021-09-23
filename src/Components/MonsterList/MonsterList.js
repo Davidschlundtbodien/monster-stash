@@ -10,8 +10,15 @@ const MonsterList = (props) => {
     .then(data => setMonsters(data.results))
   }, [])
 
+  const monsterList = monsters.map(monster => {
+    return (
+      <p key={monster.index}>{monster.name}</p>
+    )
+  })
+
   return(
     <article>
+      {monsterList}
     </article>
   )
 }
