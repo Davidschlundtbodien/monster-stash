@@ -1,0 +1,7 @@
+.health-armor {
+  background: lightgrey;
+  padding: .5em 2em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
