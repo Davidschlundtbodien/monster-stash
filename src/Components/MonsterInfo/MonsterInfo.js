@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { fetchMonsterInfo } from '../../apiCalls'
 import Attributes from './infoComponents/Attributes/Attributes'
 import Description from './infoComponents/Description/Description'
+import HealthArmor from './infoComponents/HealthArmor/HealthArmor'
 import Actions from './infoComponents/Actions/Actions'
 import Weaknesses from './infoComponents/Weaknesses/Weaknesses'
 import Strengths from './infoComponents/Strengths/Strengths'
@@ -20,6 +21,11 @@ const MonsterInfo = (props) => {
       {monster &&
         <article>
             <p>{monster.name}</p>
+            <HealthArmor
+              ac={monster.armor_class}
+              hp={monster.hit_points}
+              hitDice={monster.hit_dice}
+            />
             <Description
               xp={monster.xp}
               size={monster.size}
