@@ -1,0 +1,14 @@
+.monster-container {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.monster-container::-webkit-scrollbar {
+  display: none;
+}
+
+.monster-name {
+  font-size: 2em;
+}
