@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { fetchMonsterInfo } from '../../apiCalls'
 import Attributes from './infoComponents/Attributes/Attributes'
 import Actions from './infoComponents/Actions/Actions'
+import Weaknesses from './infoComponents/Weaknesses/Weaknesses'
 import './MonsterInfo.css'
 
 const MonsterInfo = (props) => {
@@ -26,6 +27,7 @@ const MonsterInfo = (props) => {
               cha={monster.charisma}
             />
             <Actions actions={monster.actions}/>
+            <Weaknesses weaknesses={monster.damage_vulnerabilities}/>
         </article>
       }
     </>
