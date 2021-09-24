@@ -3,6 +3,7 @@ import { fetchMonsterInfo } from '../../apiCalls'
 import Attributes from './infoComponents/Attributes/Attributes'
 import Actions from './infoComponents/Actions/Actions'
 import Weaknesses from './infoComponents/Weaknesses/Weaknesses'
+import Strengths from './infoComponents/Strengths/Strengths'
 import './MonsterInfo.css'
 
 const MonsterInfo = (props) => {
@@ -28,6 +29,11 @@ const MonsterInfo = (props) => {
             />
             <Actions actions={monster.actions}/>
             <Weaknesses weaknesses={monster.damage_vulnerabilities}/>
+            <Strengths
+              resists={monster.damage_resistances}
+              immune={monster.damage_immunities}
+              conditions={monster.condition_immunities}
+            />
         </article>
       }
     </>
