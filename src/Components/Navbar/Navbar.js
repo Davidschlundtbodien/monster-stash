@@ -4,8 +4,10 @@ const Navbar = () => {
   return(
     <nav>
       <h1>Monster Stash</h1>
-      <p>Favorites</p>
-      <p>Encounters</p>
+      <div className='nav-links'>
+        <p>Favorites</p>
+        <p>Encounters</p>
+      </div>
     </nav>
   )
 }
