@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { fetchMonsterInfo } from '../../apiCalls'
 import Attributes from './infoComponents/Attributes/Attributes'
+import Description from './infoComponents/Description/Description'
 import Actions from './infoComponents/Actions/Actions'
 import Weaknesses from './infoComponents/Weaknesses/Weaknesses'
 import Strengths from './infoComponents/Strengths/Strengths'
@@ -19,6 +20,12 @@ const MonsterInfo = (props) => {
       {monster &&
         <article>
             <p>{monster.name}</p>
+            <Description
+              xp={monster.xp}
+              size={monster.size}
+              type={monster.type}
+              align={monster.alignment}
+            />
             <Attributes
               str={monster.strength}
               dex={monster.dexterity}
