@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { fetchMonsterInfo } from '../../apiCalls'
+import Attributes from './infoComponents/Attributes/Attributes'
 import './MonsterInfo.css'
 
 const MonsterInfo = (props) => {
-  const [monster, setMonster] = useState(null)
+  const [monster, setMonster] = useState({})
 
   useEffect(() => {
     fetchMonsterInfo(props.monsterIndex)
@@ -13,10 +14,15 @@ const MonsterInfo = (props) => {
   return(
     <article>
       {!monster && <p>Monster Loading</p>}
-      <p>{monster.name}</p>
-      <p>HP - {monster.hit_points}</p>
-      <p>Hit Dice - {monster.hit_dice}</p>
-      <p>AC - {monster.armor_class}</p>
+        <p>{monster.name}</p>
+        <Attributes
+          str={monster.strength}
+          dex={monster.dexterity}
+          con={monster.constitution}
+          int={monster.intelligence}
+          wis={monster.wisdom}
+          cha={monster.charisma}
+        />
     </article>
   )
 }
