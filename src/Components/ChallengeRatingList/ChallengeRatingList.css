@@ -1,0 +1,16 @@
+.rating-list-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+  padding: 1em;
+}
+
+.rating-list-item {
+  background: lightblue;
+  text-decoration: none;
+  font-size: 1.5em;
+  color: inherit;
+  border-radius: .2em;
+  border: solid .01em;
+  box-shadow: .17em .15em .2em;
+}
