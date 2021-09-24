@@ -1,21 +1,55 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { fetchMonsterInfo } from '../../apiCalls'
+import Attributes from './infoComponents/Attributes/Attributes'
+import Description from './infoComponents/Description/Description'
+import HealthArmor from './infoComponents/HealthArmor/HealthArmor'
+import Actions from './infoComponents/Actions/Actions'
+import Weaknesses from './infoComponents/Weaknesses/Weaknesses'
+import Strengths from './infoComponents/Strengths/Strengths'
 import './MonsterInfo.css'
 
-const MonsterInfo = () => {
+const MonsterInfo = (props) => {
+  const [monster, setMonster] = useState(null)
 
   useEffect(() => {
-    fetchMonsterInfo('/api/monsters/azer')
-    .then(data => console.log(data))
+    fetchMonsterInfo(props.monsterIndex)
+    .then(data => setMonster(data))
   }, [])
 
   return(
-    <article>
-      <p>Goblin</p>
-      <p>Hp</p>
-      <p>AC</p>
-      <p>STATS</p>
-    </article>
+    <>
+      {monster &&
+        <article>
+            <p>{monster.name}</p>
+            <HealthArmor
+              ac={monster.armor_class}
+              hp={monster.hit_points}
+              hitDice={monster.hit_dice}
+            />
+            <Description
+              xp={monster.xp}
+              size={monster.size}
+              type={monster.type}
+              align={monster.alignment}
+            />
+            <Attributes
+              str={monster.strength}
+              dex={monster.dexterity}
+              con={monster.constitution}
+              int={monster.intelligence}
+              wis={monster.wisdom}
+              cha={monster.charisma}
+            />
+            <Actions actions={monster.actions}/>
+            <Weaknesses weaknesses={monster.damage_vulnerabilities}/>
+            <Strengths
+              resists={monster.damage_resistances}
+              immune={monster.damage_immunities}
+              conditions={monster.condition_immunities}
+            />
+        </article>
+      }
+    </>
   )
 }
 
