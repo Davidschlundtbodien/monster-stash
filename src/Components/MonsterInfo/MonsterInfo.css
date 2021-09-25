@@ -9,6 +9,11 @@
   display: none;
 }
 
+.monster-container > section {
+  margin: 1.2em 0;
+  border-radius: .8em;
+}
+
 .monster-name {
   font-size: 2em;
 }
