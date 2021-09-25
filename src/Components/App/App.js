@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar'
 import ChallengeRatingList from '../ChallengeRatingList/ChallengeRatingList'
 import MonsterList from '../MonsterList/MonsterList'
 import MonsterInfo from '../MonsterInfo/MonsterInfo'
+import FavoritesList from '../FavoritesList/FavoritesList'
 import { Switch, Route } from 'react-router-dom';
 
 const App = () => {
@@ -20,12 +21,15 @@ const App = () => {
           }}
         >
         </Route>
+        <Route exact path="/favorites/">
+          <FavoritesList />
+        </Route>
         <Route
           exact path="/monsters/:rating/:name"
           render={({match}) => {
             return <MonsterInfo monsterIndex={match.params.name}/>
           }}
-        >  
+        >
         </Route>
       </Switch>
     </div>
