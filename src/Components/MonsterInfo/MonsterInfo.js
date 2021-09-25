@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { fetchMonsterInfo } from '../../apiCalls'
+import { setToLocal } from '../../localStorageHandlers'
 import Attributes from './infoComponents/Attributes/Attributes'
 import Description from './infoComponents/Description/Description'
 import HealthArmor from './infoComponents/HealthArmor/HealthArmor'
@@ -16,11 +17,20 @@ const MonsterInfo = (props) => {
     .then(data => setMonster(data))
   }, [])
 
+  const handleFavorite = () => {
+    const monsterSnippet = {
+      index: monster.index,
+      name: monster.name
+    }
+    setToLocal(monsterSnippet)
+  }
+
   return(
     <>
       {monster &&
         <article className='monster-container'>
             <p className="monster-name">{monster.name}</p>
+            <button onClick={() => handleFavorite()}>Favorite</button>
             <HealthArmor
               ac={monster.armor_class}
               hp={monster.hit_points}
