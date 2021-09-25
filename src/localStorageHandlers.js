@@ -1,9 +1,14 @@
 export const setToLocal = (monster) => {
   const monsterStorage = checkStorage()
+  const isRepeat = monsterStorage.find(e => e.index === monster.index)
+
+  if(isRepeat) {
+    return
+  }
+  
   const newMonsterList = [...monsterStorage, monster]
   const listString = JSON.stringify(newMonsterList)
   localStorage.setItem('favorites', listString)
-  return console.log(localStorage);
 }
 
 export const checkStorage = () => {
