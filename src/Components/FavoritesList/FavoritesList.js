@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { checkStorage } from '../../localStorageHandlers'
 import './FavoritesList.css';
 
 const FavoritesList = (props) => {
   const [monsters, setMonsters] = useState([])
 
+
   useEffect(() => {
+    setMonsters(checkStorage())
   }, [])
 
   const monsterList = monsters.map(monster => {
@@ -20,6 +23,7 @@ const FavoritesList = (props) => {
     <>
       <h1>Favorited</h1>
       <article className="monster-list-container">
+        {monsterList}
       </article>
     </>
   )
