@@ -6,9 +6,7 @@ const Strengths = ({resists, immune}) => {
   const createList = (array) => {
     const list = array.map(e => {
       return (
-        <div key={e}>
-          <p>{e}</p>
-        </div>
+          <p key={e}>{e}</p>
       )
     })
     return list
@@ -17,18 +15,20 @@ const Strengths = ({resists, immune}) => {
   const resistanceList = createList(resists)
   const immunityList = createList(immune)
   return(
-    <section>
-      <p>Strengths</p>
-      <div>
-        <p>Resistances</p>
-        {!resists.length && <p>None</p>}
-        <div>{resistanceList}</div>
-      </div>
-      <div>
-        <p>Immunites</p>
-        {!immune.length && <p>None</p>}
-        <div>{immunityList}</div>
-      </div>
+    <section className="strength-container">
+      <p className="strength-header">Strengths</p>
+      <article className="strength-content">
+        <div className="sub-container">
+          <p className="sub-header">Resistances</p>
+          {!resists.length && <p>None</p>}
+          <div className="sub-content">{resistanceList}</div>
+        </div>
+        <div className="sub-container">
+          <p className="sub-header">Immunites</p>
+          {!immune.length && <p>None</p>}
+          <div className="sub-content">{immunityList}</div>
+        </div>
+      </article>
     </section>
   )
 }
