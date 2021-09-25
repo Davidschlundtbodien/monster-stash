@@ -1,25 +1,87 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('getMonsterList', (cr) => {
+  cy.intercept('GET', `https://www.dnd5eapi.co/api/monsters?challenge_rating=${cr}`, {
+    body: {
+      "results": [
+        {
+          "index": "awakened-shrub",
+          "name": "Awakened Shrub",
+          "url": "/api/monsters/awakened-shrub"
+        },
+        {
+          "index": "baboon",
+          "name": "Baboon",
+          "url": "/api/monsters/baboon"
+        },
+        {
+          "index": "badger",
+          "name": "Badger",
+          "url": "/api/monsters/badger"
+        }
+      ]
+    }
+  })
+})
+
+Cypress.Commands.add('getMonster', (monsterIndex) => {
+  cy.intercept('GET', `https://www.dnd5eapi.co/api/monsters/${monsterIndex}`, {
+    body: {
+      "index": "awakened-shrub",
+      "name": "Awakened Shrub",
+      "size": "Small",
+      "type": "plant",
+      "subtype": null,
+      "alignment": "unaligned",
+      "armor_class": 9,
+      "hit_points": 10,
+      "hit_dice": "3d6",
+      "speed": {
+        "walk": "20 ft."
+      },
+      "strength": 3,
+      "dexterity": 8,
+      "constitution": 11,
+      "intelligence": 10,
+      "wisdom": 10,
+      "charisma": 6,
+      "proficiencies": [],
+      "damage_vulnerabilities": [
+        "fire"
+      ],
+      "damage_resistances": [
+        "piercing"
+      ],
+      "damage_immunities": [],
+      "condition_immunities": [],
+      "senses": {
+      "passive_perception": 10
+      },
+      "languages": "one language known by its creator",
+      "challenge_rating": 0,
+      "xp": 10,
+      "special_abilities": [
+        {
+          "name": "False Appearance",
+          "desc": "While the shrub remains motionless, it is indistinguishable from a normal shrub."
+        }
+      ],
+      "actions": [
+        {
+          "name": "Rake",
+          "desc": "Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 - 1) slashing damage.",
+          "attack_bonus": 1,
+          "damage": [
+            {
+              "damage_type": {
+              "index": "slashing",
+              "name": "Slashing",
+              "url": "/api/damage-types/slashing"
+            },
+              "damage_dice": "1d4-1"
+            }
+          ]
+        }
+      ],
+      "url": "/api/monsters/awakened-shrub"
+    }
+  })
+})
