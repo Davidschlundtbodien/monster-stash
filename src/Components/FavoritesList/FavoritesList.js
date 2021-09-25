@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { checkStorage } from '../../localStorageHandlers'
+import { checkStorage, deleteFromStorage} from '../../localStorageHandlers'
 import './FavoritesList.css';
 
 const FavoritesList = (props) => {
   const [monsters, setMonsters] = useState([])
-
 
   useEffect(() => {
     setMonsters(checkStorage())
