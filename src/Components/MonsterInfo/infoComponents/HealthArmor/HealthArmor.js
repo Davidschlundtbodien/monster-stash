@@ -3,7 +3,7 @@ import './HealthArmor.css'
 const HealthArmor = ({ac, hp, hitDice}) => {
 
   return(
-    <section>
+    <section className="health-armor">
       <p>Armor Class: {ac}</p>
       <p>Average Hit Points: {hp}</p>
       <p>Hit Dice: {hitDice}</p>

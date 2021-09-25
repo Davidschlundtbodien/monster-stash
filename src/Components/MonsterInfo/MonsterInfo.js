@@ -19,8 +19,8 @@ const MonsterInfo = (props) => {
   return(
     <>
       {monster &&
-        <article>
-            <p>{monster.name}</p>
+        <article className='monster-container'>
+            <p className="monster-name">{monster.name}</p>
             <HealthArmor
               ac={monster.armor_class}
               hp={monster.hit_points}

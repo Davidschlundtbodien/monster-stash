@@ -1,0 +1,25 @@
+.action-container {
+  padding: .8em 2em;
+  background: lightgreen;
+}
+
+.action-header {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.action-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action-name {
+  width: 20%;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.action-description {
+  width: 70%;
+}

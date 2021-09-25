@@ -1,0 +1,21 @@
+.monster-list-container {
+  display: grid;
+  padding: 2em;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2em;
+  overflow-y: scroll;
+}
+
+.monster-list-container::-webkit-scrollbar {
+  display: none;
+}
+
+.monster-list-item {
+  background: lightblue;
+  text-decoration: none;
+  font-size: 1.5em;
+  color: inherit;
+  border-radius: .2em;
+  border: solid .01em;
+  box-shadow: .17em .15em .2em;
+}

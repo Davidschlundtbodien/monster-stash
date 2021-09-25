@@ -1,0 +1,13 @@
+.description-container {
+  background: lightgrey;
+}
+
+.description-header {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.description-content {
+  display: flex;
+  justify-content: space-around;
+}

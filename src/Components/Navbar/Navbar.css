@@ -1,0 +1,14 @@
+nav {
+  background: lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links > p {
+  margin: 1.2em;
+}
