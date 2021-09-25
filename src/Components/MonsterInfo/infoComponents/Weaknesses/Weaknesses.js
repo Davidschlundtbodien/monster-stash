@@ -3,17 +3,15 @@ import './Weaknesses.css'
 const Weaknesses = ({weaknesses}) => {
   const weaknessList = weaknesses.map(weakness => {
     return (
-      <div key={weakness}>
-        <p>{weakness}</p>
-      </div>
+        <p key={weakness}>{weakness}</p>
     )
   })
 
   return(
-    <section>
-      <p>Weaknesses</p>
+    <section className="weakness-container">
+      <p className="weakness-header">Weaknesses</p>
       {!weaknesses.length && <p>None</p>}
-      <div>{weaknessList}</div>
+      <div className="weakness-content">{weaknessList}</div>
     </section>
   )
 }

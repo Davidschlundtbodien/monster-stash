@@ -1,0 +1,14 @@
+.weakness-container {
+  background: cyan;
+}
+
+.weakness-header {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.weakness-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
