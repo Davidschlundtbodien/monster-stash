@@ -1,8 +1,9 @@
 nav {
-  background: lightgrey;
+  background: #2F424C;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  color: #ACC9A6;
 }
 
 .link {
@@ -16,4 +17,9 @@ nav {
 
 .nav-links > p {
   margin: 1.2em;
+}
+
+
+.link:hover {
+  text-decoration: underline;
 }
