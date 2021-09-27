@@ -12,10 +12,12 @@ import './MonsterInfo.css'
 
 const MonsterInfo = (props) => {
   const [monster, setMonster] = useState(null)
+  const [error, setError] = useState('')
 
   useEffect(() => {
     fetchMonsterInfo(props.monsterIndex)
     .then(data => setMonster(data))
+    .catch(error => setError(error))
   }, [])
 
   const handleFavorite = () => {
@@ -32,6 +34,7 @@ const MonsterInfo = (props) => {
 
   return(
     <>
+      {error && <p className="error">Error finding monster!</p>}
       {monster &&
         <article className='monster-container'>
             <p className="monster-name">{monster.name}</p>
