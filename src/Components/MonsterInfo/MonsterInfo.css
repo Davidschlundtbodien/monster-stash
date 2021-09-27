@@ -21,3 +21,23 @@
   font-size: 3em;
   font-weight: bolder;
 }
+
+.fav-button {
+  background: #3E3E42;
+  color: #ACC9A6;
+  width: 100px;
+  height: auto;
+  margin: 1em;
+  padding: 1em;
+  border: none;
+  border-radius: .2em;
+}
+
+.fav-button:hover {
+  cursor: pointer;
+}
+
+.fav-button:active {
+  background: #ACC9A6;
+  color: #3E3E42;
+}

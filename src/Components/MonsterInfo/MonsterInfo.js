@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import { fetchMonsterInfo } from '../../apiCalls'
 import { setToLocal, deleteFromStorage } from '../../localStorageHandlers'
 import Attributes from './infoComponents/Attributes/Attributes'
@@ -34,8 +35,14 @@ const MonsterInfo = (props) => {
       {monster &&
         <article className='monster-container'>
             <p className="monster-name">{monster.name}</p>
-            <button onClick={() => handleFavorite()}>Favorite</button>
-            <button onClick={() => handleDelete(monster.index)}>Unfavorite</button>
+            <div>
+              <button className="fav-button" onClick={() => handleFavorite()}>
+                Favorite
+              </button>
+              <button className="fav-button" onClick={() => handleDelete(monster.index)}>
+                <Link className="link" to="/favorites">Unfavorite</Link>
+              </button>
+            </div>
             <HealthArmor
               ac={monster.armor_class}
               hp={monster.hit_points}
