@@ -6,3 +6,9 @@
   flex-direction: column;
   text-align: center;
 }
+
+.error {
+  font-size: 2em;
+  color: darkred;
+  font-weight: bolder;
+}
