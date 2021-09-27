@@ -18,6 +18,7 @@ const MonsterInfo = (props) => {
     fetchMonsterInfo(props.monsterIndex)
     .then(data => setMonster(data))
     .catch(error => setError(error))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleFavorite = () => {
