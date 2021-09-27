@@ -4,6 +4,7 @@ import ChallengeRatingList from '../ChallengeRatingList/ChallengeRatingList'
 import MonsterList from '../MonsterList/MonsterList'
 import MonsterInfo from '../MonsterInfo/MonsterInfo'
 import FavoritesList from '../FavoritesList/FavoritesList'
+import PageNotFound from '../PageNotFound/PageNotFound'
 import { Switch, Route } from 'react-router-dom';
 
 const App = () => {
@@ -30,6 +31,9 @@ const App = () => {
             return <MonsterInfo monsterIndex={match.params.name}/>
           }}
         >
+        </Route>
+        <Route path="*">
+          <PageNotFound />
         </Route>
       </Switch>
     </div>
