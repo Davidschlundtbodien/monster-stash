@@ -5,10 +5,12 @@ import './MonsterList.css';
 
 const MonsterList = (props) => {
   const [monsters, setMonsters] = useState([])
+  const [error, setError] = useState('')
 
   useEffect(() => {
     fetchMonsters(props.rating)
     .then(data => setMonsters(data.results))
+    .catch(error => setError(error))
   }, [])
 
   const monsterList = monsters.map(monster => {
@@ -20,9 +22,12 @@ const MonsterList = (props) => {
   })
 
   return(
-    <article className="monster-list-container">
-      {monsterList}
-    </article>
+    <>
+      {error && <p className="error">There was an error loading the list</p>}
+      <article className="monster-list-container">
+        {monsterList}
+      </article>
+    </>
   )
 }
 
