@@ -6,11 +6,15 @@
 }
 
 .rating-list-item {
-  background: lightblue;
+  background: #89948C;
   text-decoration: none;
   font-size: 1.5em;
   color: inherit;
   border-radius: .2em;
-  border: solid .01em;
+  border: solid .001em;
   box-shadow: .17em .15em .2em;
+}
+
+.rating-list-item:hover {
+  transform: scale(1.05);
 }
