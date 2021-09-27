@@ -1,9 +1,11 @@
-.description-container {
-}
-
 .description-header {
   font-size: 1.3em;
   font-weight: bold;
+  background: #748179;
+  margin-top: 0;
+  padding: .8em;
+  border-radius: .6em;
+  border-bottom: solid .001em;
 }
 
 .description-content {
