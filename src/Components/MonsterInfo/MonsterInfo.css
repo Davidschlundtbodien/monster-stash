@@ -10,8 +10,11 @@
 }
 
 .monster-container > section {
+  background: #89948C;
   margin: 1.2em 0;
   border-radius: .8em;
+  border: solid .001em;
+  box-shadow: .17em .15em .2em;
 }
 
 .monster-name {

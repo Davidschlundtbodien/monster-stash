@@ -1,5 +1,4 @@
 .attr-container {
-  background: lightblue;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,5 +18,5 @@
 }
 
 .attr-content > p {
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
