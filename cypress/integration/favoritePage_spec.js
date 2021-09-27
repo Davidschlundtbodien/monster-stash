@@ -1,0 +1,21 @@
+beforeEach(() => {
+  cy.getMonster('awakened-shrub')
+  cy.visit('http://localhost:3000/monsters/0/awakened-shrub')
+})
+
+it('should be able to save and remove a monster to favorite list', () => {
+  cy.get('.monster-container > :nth-child(2) > :nth-child(1)')
+    .click()
+  cy.get('.nav-links > :nth-child(1) > .link')
+    .click()
+    .url('/favorites')
+  cy.get('.monster-list-item')
+    .contains('Awakened Shrub')
+    .click()
+    .url('/monsters/0/awakened-shrub')
+  cy.get('.monster-container > :nth-child(2) > :nth-child(2)')
+    .click()
+    .url('/favorites')
+  cy.get('.monster-list-item')
+    .should('not.exist')
+})
