@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Monster Stash
+### [Deployed on Surge.sh](https://monster-stash.surge.sh/) || [Github Repository](https://github.com/Davidschlundtbodien/monster-stash)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Abstract
 
-## Available Scripts
+ Monster Stash is a React app that interacts with the [D&D 5e api](http://www.dnd5eapi.co/docs/#intro) to display monsters for quick reference of statistics. The user can choose a challenge rating  and have a list of monsters displayed based on the selected rating. Then the user can select a monster from the list to display detailed stats of the respective monster. From here a user can choose to favorite/unfavorite this monster, which will add to/remove from a favorited list that can be accessed in the navigation bar. At the moment the favorited list utilizes Local Storage for data persistence.
 
-In the project directory, you can run:
+### Relfection
+  Working on this project was an absolute joy, however with the time allowed I felt myself cutting back my vision for the sake of meeting the cut off. That seemed more difficult with this project solely because of passion of the subject matter. Overall it was a good challenge to showcase what I've learned at Turing. 
+ 
+### Future Additions
+  - Expand statistics of the monster on info page to utilize all api data.
+  - Users can build encounters with quanity of each monster for said encounter.
+  - Refactor component tree of monster info
+  - Build challenge rating grouping and monster filtering
+ 
+### Wins
+  - Building a 100% functional component application
+  - Implementing a favoriting functionality with local storage
+  - Utilizing a react router switch
 
-### `npm start`
+### Challenges
+  - Building out a product in under a week
+  - Working around rigid endpoints of the api used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Setup Instuctions
+- `git clone` this repository
+- `cd` into the repository in your terminal
+- `npm i` to install required dependencies
+- Then `npm start` in your terminal to view it on your browser
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technologies
+  - React.js
+  - React Router
+  - Fetch API
+  - [D&D 5th Edition API](http://www.dnd5eapi.co/docs/#intro)
+  - Cypress (testing)
+  - Surge (deployment)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Developer
+  - [David Schlundt-Bodien](https://github.com/Davidschlundtbodien)
 
-### `npm run build`
+## Project Managers
+  - [Kayla Gordon](https://github.com/kaylagordon)
+  - [Scott Ertmer](https://github.com/sertmer)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Project Specs
+  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/showcase.html)
