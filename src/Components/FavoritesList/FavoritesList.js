@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { checkStorage, deleteFromStorage} from '../../localStorageHandlers'
+import { checkStorage } from '../../localStorageHandlers'
 import './FavoritesList.css';
 
 const FavoritesList = (props) => {
