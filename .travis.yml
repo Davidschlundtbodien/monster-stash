@@ -2,7 +2,8 @@ language: node_js
 
 node_js:
   # Node 10.3+ includes npm@6 which has good "npm ci" command
-  - 10.8
+  - "node"
+  
 notifications:
   email: false
 
@@ -23,7 +24,7 @@ cache:
 
 script:
   # start server in the background
-  - npm run start:ci &
+  - npm start:ci &
   # run all Cypress tests and record on the dashboard
   - npm run cy:run -- --record
   # after all tests finish running we need
