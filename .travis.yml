@@ -3,7 +3,7 @@ language: node_js
 node_js:
   # Node 10.3+ includes npm@6 which has good "npm ci" command
   - "node"
-  
+
 notifications:
   email: false
 
@@ -26,7 +26,7 @@ script:
   # start server in the background
   - npm start:ci &
   # run all Cypress tests and record on the dashboard
-  - npm run cy:run -- --record
+  - npm run cypress:run -- --record
   # after all tests finish running we need
   # to kill all background jobs (like "npm start &")
   # this avoids flake in Travis jobs
